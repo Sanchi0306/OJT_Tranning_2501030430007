@@ -1,0 +1,126 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* HOLY GRAIL LAYOUT */
+.layout{
+    display:grid;
+    grid-template-areas:
+        "header header header"
+        "left main right"
+        "footer footer footer";
+    grid-template-columns:200px 1fr 200px;
+    grid-template-rows:70px auto 60px;
+    min-height:100vh;
+}
+
+/* HEADER */
+.header{
+    grid-area:header;
+    background:#2d2d2d;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* SIDEBARS */
+.left, .right{
+    background:#f1f1f1;
+    padding:20px;
+}
+
+.left{
+    grid-area:left;
+}
+
+.right{
+    grid-area:right;
+}
+
+/* MAIN */
+.main{
+    grid-area:main;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+/* FORM BOX */
+.box{
+    width:320px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+    /* TRANSFORM EFFECT */
+    transition:0.4s;
+}
+
+.box:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+/* INPUTS */
+.box input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.box input:focus{
+    transform:scale(1.03);
+    border-color:#667eea;
+    outline:none;
+}
+
+/* BUTTON */
+.box button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.box button:hover{
+    transform:scale(1.05);
+    background:#5a67d8;
+}
+
+/* FOOTER */
+.footer{
+    grid-area:footer;
+    background:#222;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .layout{
+        grid-template-areas:
+        "header"
+        "main"
+        "left"
+        "right"
+        "footer";
+
+        grid-template-columns:1fr;
+    }
+}
