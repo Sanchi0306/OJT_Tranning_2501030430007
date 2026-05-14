@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FoodExpress</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#f8f5ef;
+            padding:20px;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+            width:100%;
+            background:white;
+            padding:18px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-radius:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom:30px;
+        }
+
+nav a{
+    text-decoration:none;
+    margin:0 15px;
+    color:#222;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ff4d4d;
+}
+
+.nav-icons i{
+    font-size:22px;
+    margin-left:20px;
+    cursor:pointer;
+}
+
+        .logo{
+            font-size:30px;
+            font-weight:bold;
+            color:#ff5a5f;
+        }
+
+        .logo i{
+            color:#ffb400;
+        }
+
+        .navbar ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        .navbar ul li a{
+            text-decoration:none;
+            color:#333;
+            font-size:17px;
+            font-weight:500;
+        }
+
+        .navbar ul li a:hover{
+            color:#ff5a5f;
+        }
+
+        /* HEADING */
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#222;
+            font-size:42px;
+        }
+
+        /* CATEGORY BUTTONS */
+
+        .categories{
+            text-align:center;
+            margin-bottom:35px;
+        }
+
+        .categories button{
+            border:none;
+            background:#ff5a5f;
+            color:white;
+            padding:12px 22px;
+            border-radius:30px;
+            margin:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .categories button:hover{
+            background:black;
+        }
+
+        .categories a{
+            text-decoration:none;
+        }
+
+        /* SECTION TITLE */
+
+        .section-title{
+            margin-top:50px;
+            margin-bottom:20px;
+            font-size:32px;
+            color:#ff5a5f;
+        }
+
+        /* TABLE */
+
+        table{
+            width:100%;
+            background:white;
+            border-radius:20px;
+            overflow:hidden;
+            border-collapse:collapse;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom:40px;
+        }
+
+        th{
+            background:#ff5a5f;
+            color:white;
+            padding:18px;
+            font-size:18px;
+        }
+
+        td{
+            padding:20px;
+            border-bottom:1px solid #eee;
+            vertical-align:middle;
+        }
+
+        tr:hover{
+            background:#fff1f1;
+        }
+
+        /* FOOD BOX */
+
+        .food-box{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .food-box img{
+            width:120px;
+            height:90px;
+            object-fit:cover;
+            border-radius:15px;
+        }
+
+        .food-name{
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        .price{
+            color:#ff5a5f;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        /* BUTTON */
+
+        .add-btn{
+            border:none;
+            background:#ff5a5f;
+            color:white;
+            padding:10px 20px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        .add-btn:hover{
+            background:black;
+        }
+
+        /* ===== AUTH SECTION ===== */
+
+.auth-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+    padding:80px 20px;
+    flex-wrap:wrap;
+}
+
+/* FORM BOX */
+
+.form-box{
+    width:380px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.form-box:hover{
+    transform:translateY(-8px);
+}
+
+/* HEADING */
+
+.form-box h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#ff5a5f;
+    font-size:32px;
+}
+
+/* INPUTS */
+
+.form-box input{
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:0.3s;
+}
+
+.form-box input:focus{
+    border-color:#ff5a5f;
+    box-shadow:0 0 5px rgba(255,90,95,0.5);
+}
+
+/* BUTTON */
+
+.form-box button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#ff5a5f;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-box button:hover{
+    background:black;
+}
+
+/* TEXT */
+
+.form-box p{
+    text-align:center;
+    margin-top:15px;
+    color:#555;
+}
+
+.form-box a{
+    color:#ff5a5f;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:850px){
+
+    .auth-section{
+        flex-direction:column;
+        align-items:center;
+    }
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-burger"></i>
+            FoodExpress
+        </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+    </nav>
+
+    <!-- HEADING -->
+
+    <h1>🍽 FoodExpress Menu</h1>
+
+    <!-- CATEGORY BUTTONS -->
+
+    <div class="categories">
+
+        <a href="#pizza">
+            <button>🍕 Pizza</button>
+        </a>
+
+        <a href="#burger">
+            <button>🍔 Burger</button>
+        </a>
+
+        <a href="#south">
+            <button>🥘 South Indian</button>
+        </a>
+
+        <a href="#chinese">
+            <button>🍜 Chinese</button>
+        </a>
+
+        <a href="#drinks">
+            <button>🥤 Drinks</button>
+        </a>
+
+    </div>
+
+    <!-- ================= PIZZA MENU ================= -->
+
+    <h2 class="section-title" id="pizza">🍕 Pizza Menu</h2>
+
+    <table>
+
+        <tr>
+            <th>Food</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Order</th>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsRHgy5W3ykT4eyP_uatY8ZLwVj3yaCbsBFA&s"><div class="food-name">Farmhouse Pizza</div></div></td>
+            <td>Loaded with veggies & cheese.</td>
+            <td class="price">₹349</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1trieCAeSxDQfYwWzOGzrUfLvqlkU1oBSnQ&s"><div class="food-name">Cheese Burst Pizza</div></div></td>
+            <td>Extra cheese loaded pizza.</td>
+            <td class="price">₹399</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://media.istockphoto.com/id/1393150881/photo/italian-pizza-margherita-with-cheese-and-tomato-sauce-on-the-board-on-grey-table-macro-close.jpg?s=612x612&w=0&k=20&c=kL0Vhg2XKBjEl__iG8sFv31WTiahdpLc3rTDtNZuD2g="><div class="food-name">Margherita Pizza</div></div></td>
+            <td>Classic cheesy pizza.</td>
+            <td class="price">₹299</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSXbtCFCYPuJlJP6CABaWJj6mD_Uvj7aunAw&s"><div class="food-name">Veggie Delight Pizza</div></div></td>
+            <td>Loaded with fresh vegetables.</td>
+            <td class="price">₹329</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShkhtxxsKAOk3D24vs-Mxo1gm-T624Ox2l5A&s"><div class="food-name">Corn Cheese Pizza</div></div></td>
+            <td>Sweet corn with extra cheese.</td>
+            <td class="price">₹349</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+    </table>
+
+    <!-- ================= BURGER MENU ================= -->
+
+    <h2 class="section-title" id="burger">🍔 Burger Menu</h2>
+
+    <table>
+
+        <tr>
+            <th>Food</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Order</th>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1.jpg"><div class="food-name">Veg Burger</div></div></td>
+            <td>Crispy veg burger with cheese.</td>
+            <td class="price">₹179</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://i.pinimg.com/736x/b6/51/c4/b651c473c595f728118644568221637e.jpg"><div class="food-name">Double Cheese Burger</div></div></td>
+            <td>Double layered cheesy burger.</td>
+            <td class="price">₹249</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPgbOVYgxZtZRq6DoxVx6xj9IP8dVeh38BEw&s"><div class="food-name">Cheese Burger</div></div></td>
+            <td>Loaded cheesy veg burger.</td>
+            <td class="price">₹199</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://www.vvsupremo.com/wp-content/uploads/2018/05/Mexican-Burger-with-Chorizo.jpg"><div class="food-name">Mexican Burger</div></div></td>
+            <td>Spicy Mexican style burger.</td>
+            <td class="price">₹229</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+    </table>
+
+    <!-- ================= SOUTH INDIAN MENU ================= -->
+
+    <h2 class="section-title" id="south">🥘 South Indian Menu</h2>
+
+    <table>
+
+        <tr>
+            <th>Food</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Order</th>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDc4ujAHMme0fUaKzqCSBeRJzmzH4gF_xe5g&s"><div class="food-name">Masala Dosa</div></div></td>
+            <td>Crispy dosa with potato stuffing.</td>
+            <td class="price">₹129</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/Receipes/sambhar_idli.webp"><div class="food-name">Idli Sambar</div></div></td>
+            <td>Soft idli with hot sambar.</td>
+            <td class="price">₹89</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://www.cubesnjuliennes.com/wp-content/uploads/2023/10/Best-Crispy-Plain-Dosa-Recipe.jpg"><div class="food-name">Plain Dosa</div></div></td>
+            <td>Traditional crispy plain dosa.</td>
+            <td class="price">₹99</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://c.ndtvimg.com/2022-08/4i2h41mo_uttapam_625x300_10_August_22.jpg"><div class="food-name">Uttapam</div></div></td>
+            <td>Soft uttapam with veggies.</td>
+            <td class="price">₹139</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://www.vegrecipesofindia.com/wp-content/uploads/2018/09/rava-dosa-recipe-1.jpg"><div class="food-name">Rava Dosa</div></div></td>
+            <td>Crunchy rava dosa special.</td>
+            <td class="price">₹149</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+    </table>
+
+    <!-- ================= CHINESE MENU ================= -->
+
+    <h2 class="section-title" id="chinese">🍜 Chinese Menu</h2>
+
+    <table>
+
+        <tr>
+            <th>Food</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Order</th>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmLGo9AC4y2fTjIHXc7Me8VZL7hFZz5unmKA&s"><div class="food-name">Veg Fried Rice</div></div></td>
+            <td>Chinese style fried rice.</td>
+            <td class="price">₹189</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr5j9u7DUHnQEKv5i4L9JT2c1vrYAKlqdRvw&s"><div class="food-name">Veg Noodles</div></div></td>
+            <td>Hot & spicy noodles.</td>
+            <td class="price">₹179</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/sanjeev-kapoor/media/media_files/2025/05/27/yN11Zkd1I1zTG05wF219.JPG"><div class="food-name">Hakka Noodles</div></div></td>
+            <td>Spicy Chinese hakka noodles.</td>
+            <td class="price">₹189</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIgnc0qCs_j6_g79aTz-qYaFNAaKDgiI96A&s"><div class="food-name">Manchurian</div></div></td>
+            <td>Veg manchurian in spicy sauce.</td>
+            <td class="price">₹219</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://d1mxd7n691o8sz.cloudfront.net/static/recipe/recipe/2023-12/Vegetable-Spring-Rolls-2-1-906001560ca545c8bc72baf473f230b4_thumbnail_170.jpeg"><div class="food-name">Spring Rolls</div></div></td>
+            <td>Crispy vegetable spring rolls.</td>
+            <td class="price">₹159</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+    </table>
+
+    <!-- ================= DRINKS MENU ================= -->
+
+    <h2 class="section-title" id="drinks">🥤 Drinks Menu</h2>
+
+    <table>
+
+        <tr>
+            <th>Drink</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Order</th>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://bakewithshivesh.com/wp-content/uploads/2021/03/IMG-3300-scaled.jpg"><div class="food-name">Chocolate Shake</div></div></td>
+            <td>Cold chocolate milkshake.</td>
+            <td class="price">₹169</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSJKPQynVCGs8vzXbuYiBPYOPCfg_KzdJ78Q&s"><div class="food-name">Cold Coffee</div></div></td>
+            <td>Refreshing creamy cold coffee.</td>
+            <td class="price">₹149</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://tastesbetterfromscratch.com/wp-content/uploads/2024/06/Oreo-Milkshake24-1.jpg"><div class="food-name">Oreo Shake</div></div></td>
+            <td>Creamy Oreo milkshake</td>
+            <td class="price">₹189</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://www.cookingclassy.com/wp-content/uploads/2024/05/strawberry-milkshake-4.jpg"><div class="food-name">Strawberry Shake</div></div></td>
+            <td>Fresh strawberry milkshake.</td>
+            <td class="price">₹169</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+        <tr>
+            <td><div class="food-box"><img src="https://media.istockphoto.com/id/537228258/photo/mason-jar-glasses-of-homemade-lemonade-on-rustic-wood.jpg?s=612x612&w=0&k=20&c=Cb8WMSL5djmvT1Ob3ROTC43BBKWDZ_wlWuaSYvbVw3Q="><div class="food-name">Lemon Soda</div></div></td>
+            <td>Refreshing chilled lemon soda.</td>
+            <td class="price">₹99</td>
+            <td><button class="add-btn">Add</button></td>
+        </tr>
+
+    </table>
+
+</section>
+
+</body>
+</html>
