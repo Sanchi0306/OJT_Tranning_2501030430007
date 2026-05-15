@@ -1,0 +1,416 @@
+# Realistic `payment.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodExpress Payment</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    background:white;
+    padding:18px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:#ff5a5f;
+}
+
+.logo i{
+    color:#ffb400;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#333;
+    margin-left:20px;
+    font-weight:500;
+}
+
+.navbar a:hover{
+    color:#ff5a5f;
+}
+
+/* CONTAINER */
+
+.container{
+    width:95%;
+    max-width:1300px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+/* PAYMENT BOX */
+
+.payment-box{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.payment-box h1{
+    margin-bottom:25px;
+    color:#222;
+}
+
+/* FORM */
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus{
+    border-color:#ff5a5f;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* PAYMENT METHODS */
+
+.methods{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    margin-top:15px;
+}
+
+.method{
+    border:2px solid #eee;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.method:hover{
+    border-color:#ff5a5f;
+    transform:translateY(-5px);
+}
+
+.method.active{
+    border-color:#ff5a5f;
+    background:#fff3f3;
+}
+
+.method i{
+    font-size:35px;
+    margin-bottom:10px;
+    color:#ff5a5f;
+}
+
+/* SUMMARY */
+
+.summary{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    height:fit-content;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.summary h2{
+    margin-bottom:25px;
+}
+
+.summary-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.total{
+    font-size:28px;
+    font-weight:700;
+    color:#ff5a5f;
+}
+
+.place-order{
+    width:100%;
+    padding:16px;
+    border:none;
+    background:#ff5a5f;
+    color:white;
+    font-size:18px;
+    border-radius:12px;
+    margin-top:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.place-order:hover{
+    background:black;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="logo">
+       🍔 FoodExpress
+    </div>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About US</a>
+        <a href="cart.html">Cart</a>
+    </div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <!-- PAYMENT FORM -->
+
+    <div class="payment-box">
+
+        <h1>💳 Payment Details</h1>
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+            <label>Delivery Address</label>
+            <textarea rows="4" placeholder="Enter delivery address"></textarea>
+        </div>
+
+        <div class="row">
+
+            <div class="input-group">
+                <label>City</label>
+                <input type="text" placeholder="Enter city">
+            </div>
+
+            <div class="input-group">
+                <label>Pincode</label>
+                <input type="text" placeholder="Enter pincode">
+            </div>
+
+        </div>
+
+        <h2 style="margin-top:25px;">Choose Payment Method</h2>
+
+        <div class="methods">
+
+            <div class="method active" onclick="selectMethod(this)">
+                <i class="fa-solid fa-credit-card"></i>
+                <div>Card</div>
+            </div>
+
+            <div class="method" onclick="selectMethod(this)">
+                <i class="fa-brands fa-google-pay"></i>
+                <div>UPI</div>
+            </div>
+
+            <div class="method" onclick="selectMethod(this)">
+                <i class="fa-solid fa-wallet"></i>
+                <div>Wallet</div>
+            </div>
+
+            <div class="method" onclick="selectMethod(this)">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <div>Cash</div>
+            </div>
+
+        </div>
+
+        <div style="margin-top:30px;">
+
+            <div class="input-group">
+                <label>Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+            </div>
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label>Expiry Date</label>
+                    <input type="text" placeholder="MM/YY">
+                </div>
+
+                <div class="input-group">
+                    <label>CVV</label>
+                    <input type="password" placeholder="***">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SUMMARY -->
+
+    <div class="summary">
+
+        <h2>Order Summary</h2>
+
+        <div class="summary-item">
+            <span>Items</span>
+            <span id="items">0</span>
+        </div>
+
+        <div class="summary-item">
+            <span>Delivery</span>
+            <span>₹40</span>
+        </div>
+
+        <div class="summary-item total">
+            <span>Total</span>
+            <span>₹<span id="total">0</span></span>
+        </div>
+
+        <button class="place-order" onclick="placeOrder()">
+            Place Order
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let total = 0;
+
+let items = 0;
+
+cart.forEach(item=>{
+
+    total += item.price * item.qty;
+
+    items += item.qty;
+
+});
+
+// DELIVERY CHARGE
+
+total += 40;
+
+// SHOW DATA
+
+document.getElementById("items").innerText = items;
+
+document.getElementById("total").innerText = total;
+
+// SELECT PAYMENT METHOD
+
+function selectMethod(element){
+
+    let methods = document.querySelectorAll(".method");
+
+    methods.forEach(method=>{
+        method.classList.remove("active");
+    });
+
+    element.classList.add("active");
+}
+
+// PLACE ORDER
+
+function placeOrder(){
+
+    if(cart.length === 0){
+
+        alert("Your cart is empty!");
+
+        return;
+    }
+
+    alert("🎉 Order Placed Successfully!");
+
+    localStorage.removeItem("cart");
+
+    window.location.href = "index.html";
+}
+
+</script>
+
+</body>
+</html>
