@@ -51,6 +51,12 @@ nav a:hover{
     font-size:22px;
     margin-left:20px;
     cursor:pointer;
+    transition:0.3s;
+}
+
+.cart-icon{
+    color:black;
+    text-decoration:none;
 }
 
         .logo{
@@ -308,13 +314,16 @@ nav a:hover{
     <nav>
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
+        <a href="about.html">About US</a>
         <a href="#offers">Offers</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="nav-icons">
         <i class="fa-solid fa-magnifying-glass"></i>
+        <a href="cart.html" class="cart-icon">
         <i class="fa-solid fa-cart-shopping"></i>
+        </a>
     </div>
 
     </nav>
@@ -366,35 +375,54 @@ nav a:hover{
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsRHgy5W3ykT4eyP_uatY8ZLwVj3yaCbsBFA&s"><div class="food-name">Farmhouse Pizza</div></div></td>
             <td>Loaded with veggies & cheese.</td>
             <td class="price">₹349</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+            <a href="cart.html">
+                <button class="add-btn"onclick="addToCart('Farmhouse Pizza',349,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsRHgy5W3ykT4eyP_uatY8ZLwVj3yaCbsBFA&s')">Add</button>
+            </a>
+            </td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1trieCAeSxDQfYwWzOGzrUfLvqlkU1oBSnQ&s"><div class="food-name">Cheese Burst Pizza</div></div></td>
             <td>Extra cheese loaded pizza.</td>
             <td class="price">₹399</td>
-            <td><button class="add-btn">Add</button></td>
+<td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Cheese Burst Pizza',399,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1trieCAeSxDQfYwWzOGzrUfLvqlkU1oBSnQ&s')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://media.istockphoto.com/id/1393150881/photo/italian-pizza-margherita-with-cheese-and-tomato-sauce-on-the-board-on-grey-table-macro-close.jpg?s=612x612&w=0&k=20&c=kL0Vhg2XKBjEl__iG8sFv31WTiahdpLc3rTDtNZuD2g="><div class="food-name">Margherita Pizza</div></div></td>
             <td>Classic cheesy pizza.</td>
             <td class="price">₹299</td>
-            <td><button class="add-btn">Add</button></td>
-        </tr>
+ <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Margherita Pizza',299,'https://media.istockphoto.com/id/1393150881/photo/italian-pizza-margherita-with-cheese-and-tomato-sauce-on-the-board-on-grey-table-macro-close.jpg?s=612x612&w=0&k=20&c=kL0Vhg2XKBjEl__iG8sFv31WTiahdpLc3rTDtNZuD2g=')">Add</button>
+    </a>
+</td>
 
         <tr>
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSXbtCFCYPuJlJP6CABaWJj6mD_Uvj7aunAw&s"><div class="food-name">Veggie Delight Pizza</div></div></td>
             <td>Loaded with fresh vegetables.</td>
             <td class="price">₹329</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Veggie Delight Pizza',329,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSXbtCFCYPuJlJP6CABaWJj6mD_Uvj7aunAw&s')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShkhtxxsKAOk3D24vs-Mxo1gm-T624Ox2l5A&s"><div class="food-name">Corn Cheese Pizza</div></div></td>
             <td>Sweet corn with extra cheese.</td>
             <td class="price">₹349</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Corn Cheese Pizza',349,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShkhtxxsKAOk3D24vs-Mxo1gm-T624Ox2l5A&s')">Add</button>
+    </a>
+</td>
         </tr>
 
     </table>
@@ -416,28 +444,44 @@ nav a:hover{
             <td><div class="food-box"><img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1.jpg"><div class="food-name">Veg Burger</div></div></td>
             <td>Crispy veg burger with cheese.</td>
             <td class="price">₹179</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Veg Burger',179,'https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1.jpg')">Add</button>
+        </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://i.pinimg.com/736x/b6/51/c4/b651c473c595f728118644568221637e.jpg"><div class="food-name">Double Cheese Burger</div></div></td>
             <td>Double layered cheesy burger.</td>
             <td class="price">₹249</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Double Cheese Burger',249,'https://i.pinimg.com/736x/b6/51/c4/b651c473c595f728118644568221637e.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPgbOVYgxZtZRq6DoxVx6xj9IP8dVeh38BEw&s"><div class="food-name">Cheese Burger</div></div></td>
             <td>Loaded cheesy veg burger.</td>
             <td class="price">₹199</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Cheese Burger',199,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPgbOVYgxZtZRq6DoxVx6xj9IP8dVeh38BEw&s')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://www.vvsupremo.com/wp-content/uploads/2018/05/Mexican-Burger-with-Chorizo.jpg"><div class="food-name">Mexican Burger</div></div></td>
             <td>Spicy Mexican style burger.</td>
             <td class="price">₹229</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Mexican Burger',229,'https://www.vvsupremo.com/wp-content/uploads/2018/05/Mexican-Burger-with-Chorizo.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
     </table>
@@ -459,35 +503,55 @@ nav a:hover{
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDc4ujAHMme0fUaKzqCSBeRJzmzH4gF_xe5g&s"><div class="food-name">Masala Dosa</div></div></td>
             <td>Crispy dosa with potato stuffing.</td>
             <td class="price">₹129</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Masala Dosa',129,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDc4ujAHMme0fUaKzqCSBeRJzmzH4gF_xe5g&s')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/Receipes/sambhar_idli.webp"><div class="food-name">Idli Sambar</div></div></td>
             <td>Soft idli with hot sambar.</td>
             <td class="price">₹89</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Idli Sambar',89,'https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/Receipes/sambhar_idli.webp')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://www.cubesnjuliennes.com/wp-content/uploads/2023/10/Best-Crispy-Plain-Dosa-Recipe.jpg"><div class="food-name">Plain Dosa</div></div></td>
             <td>Traditional crispy plain dosa.</td>
             <td class="price">₹99</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Plain Dosa',99,'https://www.cubesnjuliennes.com/wp-content/uploads/2023/10/Best-Crispy-Plain-Dosa-Recipe.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://c.ndtvimg.com/2022-08/4i2h41mo_uttapam_625x300_10_August_22.jpg"><div class="food-name">Uttapam</div></div></td>
             <td>Soft uttapam with veggies.</td>
             <td class="price">₹139</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Uttapam',139,'https://c.ndtvimg.com/2022-08/4i2h41mo_uttapam_625x300_10_August_22.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://www.vegrecipesofindia.com/wp-content/uploads/2018/09/rava-dosa-recipe-1.jpg"><div class="food-name">Rava Dosa</div></div></td>
             <td>Crunchy rava dosa special.</td>
             <td class="price">₹149</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Rava Dosa',149,'https://www.vegrecipesofindia.com/wp-content/uploads/2018/09/rava-dosa-recipe-1.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
     </table>
@@ -509,35 +573,55 @@ nav a:hover{
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmLGo9AC4y2fTjIHXc7Me8VZL7hFZz5unmKA&s"><div class="food-name">Veg Fried Rice</div></div></td>
             <td>Chinese style fried rice.</td>
             <td class="price">₹189</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Veg Fried Rice',189,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmLGo9AC4y2fTjIHXc7Me8VZL7hFZz5unmKA&s')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr5j9u7DUHnQEKv5i4L9JT2c1vrYAKlqdRvw&s"><div class="food-name">Veg Noodles</div></div></td>
             <td>Hot & spicy noodles.</td>
             <td class="price">₹179</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Veg Noodles',179,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr5j9u7DUHnQEKv5i4L9JT2c1vrYAKlqdRvw&s')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/sanjeev-kapoor/media/media_files/2025/05/27/yN11Zkd1I1zTG05wF219.JPG"><div class="food-name">Hakka Noodles</div></div></td>
             <td>Spicy Chinese hakka noodles.</td>
             <td class="price">₹189</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Hakka Noodles',189,'https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/sanjeev-kapoor/media/media_files/2025/05/27/yN11Zkd1I1zTG05wF219.JPG')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIgnc0qCs_j6_g79aTz-qYaFNAaKDgiI96A&s"><div class="food-name">Manchurian</div></div></td>
             <td>Veg manchurian in spicy sauce.</td>
             <td class="price">₹219</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Manchurian',219,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJIgnc0qCs_j6_g79aTz-qYaFNAaKDgiI96A&s')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://d1mxd7n691o8sz.cloudfront.net/static/recipe/recipe/2023-12/Vegetable-Spring-Rolls-2-1-906001560ca545c8bc72baf473f230b4_thumbnail_170.jpeg"><div class="food-name">Spring Rolls</div></div></td>
             <td>Crispy vegetable spring rolls.</td>
             <td class="price">₹159</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Spring Rolls',159,'https://d1mxd7n691o8sz.cloudfront.net/static/recipe/recipe/2023-12/Vegetable-Spring-Rolls-2-1-906001560ca545c8bc72baf473f230b4_thumbnail_170.jpeg')">Add</button>
+    </a>
+</td>
         </tr>
 
     </table>
@@ -559,40 +643,88 @@ nav a:hover{
             <td><div class="food-box"><img src="https://bakewithshivesh.com/wp-content/uploads/2021/03/IMG-3300-scaled.jpg"><div class="food-name">Chocolate Shake</div></div></td>
             <td>Cold chocolate milkshake.</td>
             <td class="price">₹169</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Chocolate Shake',169,'https://bakewithshivesh.com/wp-content/uploads/2021/03/IMG-3300-scaled.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSJKPQynVCGs8vzXbuYiBPYOPCfg_KzdJ78Q&s"><div class="food-name">Cold Coffee</div></div></td>
             <td>Refreshing creamy cold coffee.</td>
             <td class="price">₹149</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Cold Coffee',149,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSJKPQynVCGs8vzXbuYiBPYOPCfg_KzdJ78Q&s')">Add</button>
+    </a>
+</td></td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://tastesbetterfromscratch.com/wp-content/uploads/2024/06/Oreo-Milkshake24-1.jpg"><div class="food-name">Oreo Shake</div></div></td>
             <td>Creamy Oreo milkshake</td>
             <td class="price">₹189</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Oreo Shake',189,'https://tastesbetterfromscratch.com/wp-content/uploads/2024/06/Oreo-Milkshake24-1.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://www.cookingclassy.com/wp-content/uploads/2024/05/strawberry-milkshake-4.jpg"><div class="food-name">Strawberry Shake</div></div></td>
             <td>Fresh strawberry milkshake.</td>
             <td class="price">₹169</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Strawberry Shake',169,'https://www.cookingclassy.com/wp-content/uploads/2024/05/strawberry-milkshake-4.jpg')">Add</button>
+    </a>
+</td>
         </tr>
 
         <tr>
             <td><div class="food-box"><img src="https://media.istockphoto.com/id/537228258/photo/mason-jar-glasses-of-homemade-lemonade-on-rustic-wood.jpg?s=612x612&w=0&k=20&c=Cb8WMSL5djmvT1Ob3ROTC43BBKWDZ_wlWuaSYvbVw3Q="><div class="food-name">Lemon Soda</div></div></td>
             <td>Refreshing chilled lemon soda.</td>
             <td class="price">₹99</td>
-            <td><button class="add-btn">Add</button></td>
+            <td>
+    <a href="cart.html">
+        <button class="add-btn" onclick="addToCart('Lemon Soda',99,'https://media.istockphoto.com/id/537228258/photo/mason-jar-glasses-of-homemade-lemonade-on-rustic-wood.jpg?s=612x612&w=0&k=20&c=Cb8WMSL5djmvT1Ob3ROTC43BBKWDZ_wlWuaSYvbVw3Q=')">Add</button>
+    </a>
+</td>
         </tr>
 
     </table>
 
 </section>
+
+<script>
+
+function addToCart(name,price,image){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existing = cart.find(item => item.name === name);
+
+    if(existing){
+        existing.qty++;
+    }
+    else{
+        cart.push({
+            name:name,
+            price:price,
+            image:image,
+            qty:1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+
+}
+
+</script>
 
 </body>
 </html>
