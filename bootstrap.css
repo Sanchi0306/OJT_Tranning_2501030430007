@@ -1,0 +1,88 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* BODY */
+body{
+    background:#f4f4f4;
+}
+
+/* MAIN SECTION */
+.main{
+    min-height:100vh;
+
+    /* GRADIENT BACKGROUND */
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+/* FORM BOX */
+.box{
+    width:320px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+
+    /* SHADOW */
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+    /* ANIMATION */
+    transition:0.4s;
+}
+
+/* HOVER EFFECT */
+.box:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+/* INPUTS */
+.box input{
+    transition:0.3s;
+}
+
+/* INPUT FOCUS */
+.box input:focus{
+    transform:scale(1.03);
+    border-color:#667eea;
+    box-shadow:0 0 10px rgba(102,126,234,0.5);
+}
+
+/* BUTTON */
+.box button{
+    transition:0.3s;
+}
+
+/* BUTTON HOVER */
+.box button:hover{
+    transform:scale(1.05);
+}
+
+/* SIDEBARS */
+aside{
+    min-height:100vh;
+}
+
+/* FOOTER */
+footer{
+    font-size:16px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .main{
+        padding:30px 15px;
+    }
+
+    .box{
+        width:100%;
+        max-width:350px;
+    }
+
+    aside{
+        min-height:auto;
+    }
+}
