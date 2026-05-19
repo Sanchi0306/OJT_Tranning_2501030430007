@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>About Us - FoodExpress</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- BOOTSTRAP ICONS -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <style>
 
@@ -40,19 +43,20 @@ body{
 }
 
 .logo{
-    font-size:30px;
+    font-size:32px;
     font-weight:700;
     color:#ff5a5f;
 }
 
 .logo i{
     color:#ffb400;
+    margin-right:8px;
 }
 
 .nav-links a{
     text-decoration:none;
     color:#333;
-    margin-left:20px;
+    margin-left:25px;
     font-weight:500;
     transition:0.3s;
 }
@@ -65,9 +69,10 @@ body{
 
 .hero{
     width:100%;
-    min-height:85vh;
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url('https://img.freepik.com/premium-photo/delicious-fast-food-combo-pizza-burgers-fries-soda_1223751-8222.jpg?semt=ais_hybrid&w=740&q=80');
+    min-height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://img.freepik.com/premium-photo/delicious-fast-food-combo-pizza-burgers-fries-soda_1223751-8222.jpg?semt=ais_hybrid&w=1200');
     background-size:cover;
     background-position:center;
     display:flex;
@@ -79,13 +84,13 @@ body{
 }
 
 .hero-content h1{
-    font-size:65px;
+    font-size:70px;
     margin-bottom:20px;
 }
 
 .hero-content p{
-    font-size:22px;
-    max-width:800px;
+    font-size:24px;
+    max-width:850px;
     line-height:1.8;
 }
 
@@ -94,7 +99,7 @@ body{
 .about-section{
     width:90%;
     max-width:1200px;
-    margin:80px auto;
+    margin:90px auto;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:50px;
@@ -108,15 +113,15 @@ body{
 }
 
 .about-text h2{
-    font-size:45px;
-    margin-bottom:20px;
+    font-size:48px;
     color:#ff5a5f;
+    margin-bottom:20px;
 }
 
 .about-text p{
     font-size:18px;
-    line-height:1.9;
     color:#555;
+    line-height:1.9;
     margin-bottom:20px;
 }
 
@@ -130,7 +135,7 @@ body{
 
 .section-title{
     text-align:center;
-    font-size:45px;
+    font-size:48px;
     color:#ff5a5f;
     margin-bottom:50px;
 }
@@ -143,7 +148,7 @@ body{
 
 .feature{
     background:white;
-    padding:35px;
+    padding:40px 30px;
     border-radius:25px;
     text-align:center;
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
@@ -155,14 +160,14 @@ body{
 }
 
 .feature i{
-    font-size:55px;
+    font-size:60px;
     color:#ff5a5f;
     margin-bottom:20px;
 }
 
 .feature h3{
+    font-size:28px;
     margin-bottom:15px;
-    font-size:25px;
 }
 
 .feature p{
@@ -170,7 +175,7 @@ body{
     line-height:1.8;
 }
 
-/* TEAM */
+/* TEAM SECTION */
 
 .team{
     width:90%;
@@ -199,7 +204,7 @@ body{
 
 .team-card img{
     width:100%;
-    height:300px;
+    height:320px;
     object-fit:cover;
 }
 
@@ -219,23 +224,24 @@ body{
 .footer{
     background:#111;
     color:white;
-    padding:50px 20px;
     text-align:center;
+    padding:50px 20px;
     margin-top:80px;
 }
 
 .footer h2{
-    margin-bottom:15px;
     color:#ff5a5f;
+    margin-bottom:15px;
+    font-size:40px;
 }
 
 .footer p{
     color:#ccc;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .social-icons i{
-    font-size:24px;
+    font-size:28px;
     margin:0 12px;
     cursor:pointer;
     transition:0.3s;
@@ -254,11 +260,24 @@ body{
     }
 
     .hero-content h1{
-        font-size:45px;
+        font-size:48px;
     }
 
     .hero-content p{
         font-size:18px;
+    }
+
+    .navbar{
+        padding:15px 20px;
+        flex-direction:column;
+    }
+
+    .nav-links{
+        margin-top:15px;
+    }
+
+    .nav-links a{
+        margin:0 10px;
     }
 
 }
@@ -273,19 +292,19 @@ body{
 <div class="navbar">
 
     <div class="logo">
-        🍔 FoodExpress
+         🍔 FoodExpress
     </div>
 
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="about.html">About US</a>
+        <a href="#">About Us</a>
         <a href="cart.html">Cart</a>
     </div>
 
 </div>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 
 <div class="hero">
 
@@ -294,15 +313,15 @@ body{
         <h1>About FoodExpress</h1>
 
         <p>
-            Delivering happiness with delicious food, fast delivery,
-            and unforgettable dining experiences.
+            Delivering happiness with delicious food,
+            fast delivery, and unforgettable dining experiences.
         </p>
 
     </div>
 
 </div>
 
-<!-- ABOUT -->
+<!-- ABOUT SECTION -->
 
 <div class="about-section">
 
@@ -317,16 +336,17 @@ body{
         <h2>Who We Are</h2>
 
         <p>
-            FoodExpress is a modern online food ordering platform created
-            to bring your favorite meals directly to your doorstep.
+            FoodExpress is a modern online food ordering platform
+            created to bring your favorite meals directly to your doorstep.
             From pizzas and burgers to drinks and desserts,
             we provide fresh and delicious food with fast delivery.
         </p>
 
         <p>
-            Our mission is to make food ordering simple, quick,
-            and enjoyable for everyone. We focus on quality,
-            customer satisfaction, and affordable prices.
+            Our mission is to make food ordering simple,
+            quick, and enjoyable for everyone.
+            We focus on quality, customer satisfaction,
+            and affordable prices.
         </p>
 
     </div>
@@ -342,42 +362,58 @@ body{
     <div class="feature-boxes">
 
         <div class="feature">
-            <i class="fa-solid fa-truck-fast"></i>
+
+            <i class="bi bi-truck"></i>
+
             <h3>Fast Delivery</h3>
+
             <p>
                 Get your food delivered quickly and safely to your home.
             </p>
+
         </div>
 
         <div class="feature">
-            <i class="fa-solid fa-bowl-food"></i>
+
+            <i class="bi bi-cup-hot-fill"></i>
+
             <h3>Fresh Food</h3>
+
             <p>
                 We prepare every order using fresh and quality ingredients.
             </p>
+
         </div>
 
         <div class="feature">
-            <i class="fa-solid fa-star"></i>
+
+            <i class="bi bi-star-fill"></i>
+
             <h3>Best Quality</h3>
+
             <p>
                 Our food is loved by thousands of happy customers.
             </p>
+
         </div>
 
         <div class="feature">
-            <i class="fa-solid fa-headset"></i>
+
+            <i class="bi bi-headset"></i>
+
             <h3>24/7 Support</h3>
+
             <p>
                 Our support team is always ready to help you anytime.
             </p>
+
         </div>
 
     </div>
 
 </div>
 
-<!-- TEAM -->
+<!-- TEAM SECTION -->
 
 <div class="team">
 
@@ -386,21 +422,33 @@ body{
     <div class="team-boxes">
 
         <div class="team-card">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop">
-            <h3>Rahul Sharma</h3>
+
+            <img src="Sanchi.jpeg">
+
+            <h3>Sanchi Gupta</h3>
+
             <p>Founder & CEO</p>
+
         </div>
 
         <div class="team-card">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop">
-            <h3>Priya Patel</h3>
+
+            <img src="Vishwa.jpeg">
+
+            <h3>Vishwa Dhorajiya</h3>
+
             <p>Food Manager</p>
+
         </div>
 
         <div class="team-card">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop">
-            <h3>Aman Verma</h3>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuu86Em9EGfU-1yT-Q8GjAL3xz_j3X2HlDFg&s">
+
+            <h3>Sidharth Malhotra</h3>
+
             <p>Delivery Head</p>
+
         </div>
 
     </div>
@@ -418,10 +466,15 @@ body{
     </p>
 
     <div class="social-icons">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-youtube"></i>
+
+        <i class="bi bi-facebook"></i>
+
+        <i class="bi bi-instagram"></i>
+
+        <i class="bi bi-twitter-x"></i>
+
+        <i class="bi bi-youtube"></i>
+
     </div>
 
 </div>
