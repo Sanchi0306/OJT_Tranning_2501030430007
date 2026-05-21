@@ -2,206 +2,206 @@
 <html>
 <head>
     <title>FoodExpress</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <style>
+<style>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-            scroll-behavior:smooth;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
 
-        body{
-            background:#f8f5ef;
-            padding:20px;
-        }
+body{
+    background:#f8f5ef;
+    padding:20px;
+}
 
-        /* NAVBAR */
+/* NAVBAR */
+.navbar{
+    width:100%;
+    background:white;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
 
-        .navbar{
-            width:100%;
-            background:white;
-            padding:18px 40px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            border-radius:20px;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom:30px;
-        }
+/* LOGO */
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#ff5a5f;
+}
 
-nav a{
+.logo i{color:#ffb400;}
+
+/* NAV LINKS */
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
     text-decoration:none;
-    margin:0 15px;
     color:#222;
-    font-size:18px;
+    font-size:17px;
     font-weight:600;
+    transition:0.3s;
+    position:relative;
+}
+
+/* UNDERLINE EFFECT */
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#ff5a5f;
     transition:0.3s;
 }
 
-nav a:hover{
-    color:#ff4d4d;
+.nav-links a:hover{
+    color:#ff5a5f;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ICONS */
+.nav-icons{
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
 
 .nav-icons i{
     font-size:22px;
-    margin-left:20px;
     cursor:pointer;
     transition:0.3s;
+    color:#110c0c;
+}
+
+.nav-icons i:hover{
+    color:#ff5a5f;
+    transform:translateY(-3px);
 }
 
 .cart-icon{
-    color:black;
     text-decoration:none;
 }
 
-        .logo{
-            font-size:30px;
-            font-weight:bold;
-            color:#ff5a5f;
-        }
+/* HEADING */
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#222;
+    font-size:42px;
+}
 
-        .logo i{
-            color:#ffb400;
-        }
+/* CATEGORY BUTTONS */
+.categories{
+    text-align:center;
+    margin-bottom:35px;
+}
 
-        .navbar ul{
-            display:flex;
-            list-style:none;
-            gap:25px;
-        }
+.categories button{
+    border:none;
+    background:#ff5a5f;
+    color:white;
+    padding:12px 22px;
+    border-radius:30px;
+    margin:5px;
+    cursor:pointer;
+    font-size:16px;
+}
 
-        .navbar ul li a{
-            text-decoration:none;
-            color:#333;
-            font-size:17px;
-            font-weight:500;
-        }
+.categories button:hover{background:black;}
 
-        .navbar ul li a:hover{
-            color:#ff5a5f;
-        }
+.categories a{text-decoration:none;}
 
-        /* HEADING */
+/* SECTION TITLE */
+.section-title{
+    margin-top:50px;
+    margin-bottom:20px;
+    font-size:32px;
+    color:#ff5a5f;
+}
 
-        h1{
-            text-align:center;
-            margin-bottom:30px;
-            color:#222;
-            font-size:42px;
-        }
+/* TABLE */
+table{
+    width:100%;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    border-collapse:collapse;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom:40px;
+}
 
-        /* CATEGORY BUTTONS */
+th{
+    background:#ff5a5f;
+    color:white;
+    padding:18px;
+    font-size:18px;
+}
 
-        .categories{
-            text-align:center;
-            margin-bottom:35px;
-        }
+td{
+    padding:20px;
+    border-bottom:1px solid #eee;
+    vertical-align:middle;
+}
 
-        .categories button{
-            border:none;
-            background:#ff5a5f;
-            color:white;
-            padding:12px 22px;
-            border-radius:30px;
-            margin:5px;
-            cursor:pointer;
-            font-size:16px;
-        }
+tr:hover{background:#fff1f1;}
 
-        .categories button:hover{
-            background:black;
-        }
+/* FOOD BOX */
+.food-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
 
-        .categories a{
-            text-decoration:none;
-        }
+.food-box img{
+    width:120px;
+    height:90px;
+    object-fit:cover;
+    border-radius:15px;
+}
 
-        /* SECTION TITLE */
+.food-name{
+    font-size:20px;
+    font-weight:bold;
+}
 
-        .section-title{
-            margin-top:50px;
-            margin-bottom:20px;
-            font-size:32px;
-            color:#ff5a5f;
-        }
+.price{
+    color:#ff5a5f;
+    font-size:22px;
+    font-weight:bold;
+}
 
-        /* TABLE */
+/* BUTTON */
 
-        table{
-            width:100%;
-            background:white;
-            border-radius:20px;
-            overflow:hidden;
-            border-collapse:collapse;
-            box-shadow:0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom:40px;
-        }
+.add-btn{
+    border:none;
+    background:#ff5a5f;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
 
-        th{
-            background:#ff5a5f;
-            color:white;
-            padding:18px;
-            font-size:18px;
-        }
+.add-btn:hover{background:black;}
 
-        td{
-            padding:20px;
-            border-bottom:1px solid #eee;
-            vertical-align:middle;
-        }
-
-        tr:hover{
-            background:#fff1f1;
-        }
-
-        /* FOOD BOX */
-
-        .food-box{
-            display:flex;
-            align-items:center;
-            gap:15px;
-        }
-
-        .food-box img{
-            width:120px;
-            height:90px;
-            object-fit:cover;
-            border-radius:15px;
-        }
-
-        .food-name{
-            font-size:20px;
-            font-weight:bold;
-        }
-
-        .price{
-            color:#ff5a5f;
-            font-size:22px;
-            font-weight:bold;
-        }
-
-        /* BUTTON */
-
-        .add-btn{
-            border:none;
-            background:#ff5a5f;
-            color:white;
-            padding:10px 20px;
-            border-radius:10px;
-            cursor:pointer;
-        }
-
-        .add-btn:hover{
-            background:black;
-        }
-
-        /* ===== AUTH SECTION ===== */
-
+/* ===== AUTH SECTION ===== */
 .auth-section{
     width:100%;
     display:flex;
@@ -213,7 +213,6 @@ nav a:hover{
 }
 
 /* FORM BOX */
-
 .form-box{
     width:380px;
     background:white;
@@ -223,12 +222,9 @@ nav a:hover{
     transition:0.3s;
 }
 
-.form-box:hover{
-    transform:translateY(-8px);
-}
+.form-box:hover{transform:translateY(-8px);}
 
 /* HEADING */
-
 .form-box h2{
     text-align:center;
     margin-bottom:25px;
@@ -237,7 +233,6 @@ nav a:hover{
 }
 
 /* INPUTS */
-
 .form-box input{
     width:100%;
     padding:15px;
@@ -255,7 +250,6 @@ nav a:hover{
 }
 
 /* BUTTON */
-
 .form-box button{
     width:100%;
     padding:15px;
@@ -268,12 +262,9 @@ nav a:hover{
     transition:0.3s;
 }
 
-.form-box button:hover{
-    background:black;
-}
+.form-box button:hover{background:black;}
 
 /* TEXT */
-
 .form-box p{
     text-align:center;
     margin-top:15px;
@@ -287,53 +278,49 @@ nav a:hover{
 }
 
 /* MOBILE RESPONSIVE */
-
 @media(max-width:850px){
-
     .auth-section{
         flex-direction:column;
         align-items:center;
     }
 
 }
-
-    </style>
+</style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar">
 
-    <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">
+        <i class="fa-solid fa-burger"></i>
+        FoodExpress
+    </div>
 
-        <div class="logo">
-            <i class="fa-solid fa-burger"></i>
-            FoodExpress
-        </div>
-
-    <nav>
+    <!-- NAV LINKS -->
+    <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="about.html">About US</a>
+        <a href="about.html">About Us</a>
         <a href="#offers">Offers</a>
         <a href="#contact">Contact</a>
-    </nav>
+    </div>
 
+    <!-- ICONS -->
     <div class="nav-icons">
         <i class="fa-solid fa-magnifying-glass"></i>
         <a href="cart.html" class="cart-icon">
-        <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
         </a>
     </div>
-
-    </nav>
+</nav>
 
     <!-- HEADING -->
-
     <h1>🍽 FoodExpress Menu</h1>
 
     <!-- CATEGORY BUTTONS -->
-
     <div class="categories">
 
         <a href="#pizza">
@@ -359,7 +346,6 @@ nav a:hover{
     </div>
 
     <!-- ================= PIZZA MENU ================= -->
-
     <h2 class="section-title" id="pizza">🍕 Pizza Menu</h2>
 
     <table>
@@ -428,7 +414,6 @@ nav a:hover{
     </table>
 
     <!-- ================= BURGER MENU ================= -->
-
     <h2 class="section-title" id="burger">🍔 Burger Menu</h2>
 
     <table>
@@ -487,7 +472,6 @@ nav a:hover{
     </table>
 
     <!-- ================= SOUTH INDIAN MENU ================= -->
-
     <h2 class="section-title" id="south">🥘 South Indian Menu</h2>
 
     <table>
@@ -557,7 +541,6 @@ nav a:hover{
     </table>
 
     <!-- ================= CHINESE MENU ================= -->
-
     <h2 class="section-title" id="chinese">🍜 Chinese Menu</h2>
 
     <table>
@@ -627,7 +610,6 @@ nav a:hover{
     </table>
 
     <!-- ================= DRINKS MENU ================= -->
-
     <h2 class="section-title" id="drinks">🥤 Drinks Menu</h2>
 
     <table>
@@ -699,7 +681,6 @@ nav a:hover{
 </section>
 
 <script>
-
 function addToCart(name,price,image){
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -723,7 +704,6 @@ function addToCart(name,price,image){
     alert(name + " added to cart!");
 
 }
-
 </script>
 
 </body>
