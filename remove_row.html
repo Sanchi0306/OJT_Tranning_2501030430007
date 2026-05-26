@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Remove Row</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    table{
+      width: 50%;
+      border-collapse: collapse;
+    }
+
+    th, td{
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    button{
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Remove Table Row</h2>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>Sanchi</td>
+      <td>
+        <button class="deleteBtn">
+          Delete
+        </button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>2</td>
+      <td>Prem</td>
+      <td>
+        <button class="deleteBtn">
+          Delete
+        </button>
+      </td>
+    </tr>
+
+  </table>
+
+  <script>
+
+    $(".deleteBtn").click(function(){
+
+      $(this).closest("tr").remove();
+
+    });
+
+  </script>
+
+</body>
+</html>
