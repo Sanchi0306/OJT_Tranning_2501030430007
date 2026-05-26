@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CampusFest 2026</title>
+
+<!-- TAILWIND CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#081120;
+overflow-x:hidden;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* LOGO ANIMATION */
+
+.logo{
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #00d4ff;
+}
+to{
+text-shadow:0 0 25px #8b5cf6;
+}
+}
+
+/* HERO BG ANIMATION */
+
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#00d4ff;
+filter:blur(180px);
+opacity:0.15;
+top:-150px;
+left:-100px;
+animation:float 6s infinite ease-in-out;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:450px;
+height:450px;
+background:#8b5cf6;
+filter:blur(180px);
+opacity:0.18;
+bottom:-150px;
+right:-100px;
+animation:float 8s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(20px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+/* HERO TEXT */
+
+.hero-content{
+position:relative;
+z-index:2;
+animation:fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* COUNTDOWN */
+
+.time-box{
+animation:bounce 3s infinite;
+}
+
+@keyframes bounce{
+0%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(0);
+}
+}
+
+/* CARD SHINE EFFECT */
+
+.card{
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:-100%;
+left:-100%;
+width:300%;
+height:300%;
+background:linear-gradient(
+45deg,
+transparent,
+rgba(255,255,255,0.08),
+transparent
+);
+transform:rotate(25deg);
+transition:0.7s;
+}
+
+.card:hover::before{
+left:100%;
+}
+
+/* GALLERY */
+
+.gallery-item{
+overflow:hidden;
+}
+
+.gallery-item img{
+transition:0.6s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1) rotate(2deg);
+}
+
+</style>
+
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR -->
+
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md">
+
+<div class="flex justify-between items-center px-[8%] py-5">
+
+<div class="logo text-3xl font-bold text-cyan-400">
+CampusFest
+</div>
+
+<ul class="nav-links md:flex gap-8 hidden font-bold">
+
+<li><a href="#home" class="hover:text-cyan-400 duration-300">Home</a></li>
+
+<li><a href="#events" class="hover:text-cyan-400 duration-300">Events</a></li>
+
+<li><a href="#gallery" class="hover:text-cyan-400 duration-300">Gallery</a></li>
+
+<li><a href="#register" class="hover:text-cyan-400 duration-300">Register</a></li>
+
+<li><a href="#contact" class="hover:text-cyan-400 duration-300">Contact</a></li>
+
+</ul>
+
+<div class="menu-btn text-3xl cursor-pointer md:hidden">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<ul class="mobile-menu hidden flex-col gap-5 bg-slate-900 mx-5 mb-5 p-6 rounded-2xl font-bold md:hidden">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#register">Register</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="home"
+class="hero relative min-h-screen flex items-center justify-center text-center px-[8%] bg-cover bg-center"
+style="background-image:
+linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop');">
+
+<div class="hero-content">
+
+<h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
+CampusFest 2026
+</h1>
+
+<p class="max-w-3xl mx-auto text-lg md:text-xl leading-9 text-slate-300">
+Gujarat’s biggest college festival with music,
+coding competitions, gaming battles,
+workshops, celebrity nights, and fun activities.
+</p>
+
+<!-- COUNTDOWN -->
+
+<div class="flex justify-center gap-5 flex-wrap mt-12">
+
+<div class="time-box bg-white/10 backdrop-blur-md p-6 rounded-3xl min-w-[120px] shadow-lg">
+<h2 id="days" class="text-4xl font-bold text-cyan-400">00</h2>
+<span>Days</span>
+</div>
+
+<div class="time-box bg-white/10 backdrop-blur-md p-6 rounded-3xl min-w-[120px] shadow-lg">
+<h2 id="hours" class="text-4xl font-bold text-cyan-400">00</h2>
+<span>Hours</span>
+</div>
+
+<div class="time-box bg-white/10 backdrop-blur-md p-6 rounded-3xl min-w-[120px] shadow-lg">
+<h2 id="minutes" class="text-4xl font-bold text-cyan-400">00</h2>
+<span>Minutes</span>
+</div>
+
+<div class="time-box bg-white/10 backdrop-blur-md p-6 rounded-3xl min-w-[120px] shadow-lg">
+<h2 id="seconds" class="text-4xl font-bold text-cyan-400">00</h2>
+<span>Seconds</span>
+</div>
+
+</div>
+
+<a href="#register"
+class="inline-block mt-10 px-10 py-4 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 font-bold hover:scale-105 duration-300 shadow-lg">
+Register Now
+</a>
+
+</div>
+
+</section>
+
+<!-- EVENTS -->
+
+<section id="events" class="py-24 px-[8%]">
+
+<h2 class="text-5xl text-cyan-400 text-center font-bold mb-5">
+Fest Events
+</h2>
+
+<p class="max-w-3xl mx-auto text-center text-slate-300 leading-8 mb-14">
+Explore exciting tech, gaming, cultural,
+and entertainment events.
+</p>
+
+<!-- FILTER BUTTONS -->
+
+<div class="flex justify-center gap-4 flex-wrap mb-14">
+
+<button class="filter-btn active px-6 py-3 rounded-full bg-cyan-400 text-black font-bold"
+data-filter="all">
+All
+</button>
+
+<button class="filter-btn px-6 py-3 rounded-full bg-slate-800"
+data-filter="tech">
+Tech
+</button>
+
+<button class="filter-btn px-6 py-3 rounded-full bg-slate-800"
+data-filter="cultural">
+Cultural
+</button>
+
+<button class="filter-btn px-6 py-3 rounded-full bg-slate-800"
+data-filter="gaming">
+Gaming
+</button>
+
+</div>
+
+<!-- EVENT CARDS -->
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
+
+<!-- TECH -->
+
+<div class="card tech bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-code text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Hackathon</h3>
+<p class="text-slate-300">24-hour coding competition.</p>
+</div>
+
+<div class="card tech bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-robot text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">AI Workshop</h3>
+<p class="text-slate-300">Learn modern AI concepts.</p>
+</div>
+
+<div class="card tech bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-lightbulb text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Startup Pitch</h3>
+<p class="text-slate-300">Present startup ideas to judges.</p>
+</div>
+
+<div class="card tech bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-laptop-code text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Web Dev Challenge</h3>
+<p class="text-slate-300">Create futuristic websites.</p>
+</div>
+
+<!-- CULTURAL -->
+
+<div class="card cultural bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-music text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Dance Battle</h3>
+<p class="text-slate-300">Show your best dance moves.</p>
+</div>
+
+<div class="card cultural bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-guitar text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Battle of Bands</h3>
+<p class="text-slate-300">Live musical performances.</p>
+</div>
+
+<div class="card cultural bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-camera text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Photography Contest</h3>
+<p class="text-slate-300">Capture amazing fest moments.</p>
+</div>
+
+<div class="card cultural bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-masks-theater text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Drama Night</h3>
+<p class="text-slate-300">Creative stage performances.</p>
+</div>
+
+<!-- GAMING -->
+
+<div class="card gaming bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-gamepad text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">BGMI Tournament</h3>
+<p class="text-slate-300">Battle against top squads.</p>
+</div>
+
+<div class="card gaming bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-vr-cardboard text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">VR Gaming Arena</h3>
+<p class="text-slate-300">Experience immersive gaming.</p>
+</div>
+
+<div class="card gaming bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-trophy text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Esports Championship</h3>
+<p class="text-slate-300">Valorant, FIFA, BGMI and more.</p>
+</div>
+
+<div class="card gaming bg-white/10 p-8 rounded-3xl hover:-translate-y-3 duration-500">
+<i class="fa-solid fa-headset text-5xl text-cyan-400 mb-5"></i>
+<h3 class="text-2xl font-bold mb-3">Gaming Stream Zone</h3>
+<p class="text-slate-300">Live streaming and fun matches.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery" class="py-24 px-[8%]">
+
+<h2 class="text-5xl text-cyan-400 text-center font-bold mb-5">
+Campus Gallery
+</h2>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+
+<div class="gallery-item rounded-3xl">
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop"
+class="w-full h-80 object-cover">
+</div>
+
+<div class="gallery-item rounded-3xl">
+<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200&auto=format&fit=crop"
+class="w-full h-80 object-cover">
+</div>
+
+<div class="gallery-item rounded-3xl">
+<img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop"
+class="w-full h-80 object-cover">
+</div>
+
+<div class="gallery-item rounded-3xl">
+<img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1200&auto=format&fit=crop"
+class="w-full h-80 object-cover">
+</div>
+
+</div>
+
+</section>
+
+<!-- REGISTER -->
+
+<section id="register" class="py-24 px-[8%]">
+
+<h2 class="text-5xl text-cyan-400 text-center font-bold mb-14">
+Register Now
+</h2>
+
+<form id="registerForm"
+class="max-w-3xl mx-auto grid gap-6">
+
+<input type="text"
+placeholder="Full Name"
+required
+class="p-4 rounded-2xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-400">
+
+<input type="email"
+placeholder="Email Address"
+required
+class="p-4 rounded-2xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-400">
+
+<input type="text"
+placeholder="College Name"
+required
+class="p-4 rounded-2xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-400">
+
+<select required
+class="p-4 rounded-2xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-400">
+
+<option value="">Select Event</option>
+
+<option>Hackathon</option>
+<option>Web Dev Challenge</option>
+<option>AI Workshop</option>
+<option>Startup Pitch</option>
+<option>Dance Battle</option>
+<option>Battle of Bands</option>
+<option>Photography Contest</option>
+<option>Drama Night</option>
+<option>BGMI Tournament</option>
+<option>VR Gaming Arena</option>
+<option>Esports Championship</option>
+
+</select>
+
+<textarea rows="5"
+placeholder="Message"
+class="p-4 rounded-2xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+
+<button type="submit"
+class="p-4 rounded-2xl bg-gradient-to-r from-blue-500 to-violet-500 font-bold hover:scale-105 duration-300">
+Submit Registration
+</button>
+
+</form>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="py-24 px-[8%]">
+
+<h2 class="text-5xl text-cyan-400 text-center font-bold mb-14">
+Contact Us
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="bg-white/10 p-10 rounded-3xl text-center hover:-translate-y-3 duration-500">
+
+<i class="fa-solid fa-phone text-5xl text-cyan-400 mb-5"></i>
+
+<h3 class="text-2xl font-bold mb-4">Call Us</h3>
+
+<a href="tel:+919876543210"
+class="text-slate-300 hover:text-cyan-400">
++91 98765 43210
+</a>
+
+</div>
+
+<div class="bg-white/10 p-10 rounded-3xl text-center hover:-translate-y-3 duration-500">
+
+<i class="fa-solid fa-envelope text-5xl text-cyan-400 mb-5"></i>
+
+<h3 class="text-2xl font-bold mb-4">Email Us</h3>
+
+<a href="mailto:campusfest@gmail.com"
+class="text-slate-300 hover:text-cyan-400">
+campusfest@gmail.com
+</a>
+
+</div>
+
+<div class="bg-white/10 p-10 rounded-3xl text-center hover:-translate-y-3 duration-500">
+
+<i class="fa-solid fa-location-dot text-5xl text-cyan-400 mb-5"></i>
+
+<h3 class="text-2xl font-bold mb-4">Location</h3>
+
+<a href="https://maps.google.com/?q=Ahmedabad,Gujarat"
+target="_blank"
+class="text-slate-300 hover:text-cyan-400">
+Ahmedabad, Gujarat
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-black py-20 px-[8%]">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+<div>
+
+<h2 class="text-3xl font-bold text-cyan-400 mb-5">
+CampusFest 2026
+</h2>
+
+<p class="text-slate-300 leading-8">
+Gujarat’s biggest college festival
+with coding, gaming, dance,
+music, and workshops.
+</p>
+
+<div class="flex gap-4 mt-6">
+
+<i class="fa-brands fa-instagram w-12 h-12 flex justify-center items-center rounded-full bg-white/10 hover:bg-cyan-400 hover:text-black duration-300 cursor-pointer"></i>
+
+<i class="fa-brands fa-facebook w-12 h-12 flex justify-center items-center rounded-full bg-white/10 hover:bg-cyan-400 hover:text-black duration-300 cursor-pointer"></i>
+
+<i class="fa-brands fa-linkedin w-12 h-12 flex justify-center items-center rounded-full bg-white/10 hover:bg-cyan-400 hover:text-black duration-300 cursor-pointer"></i>
+
+<i class="fa-brands fa-youtube w-12 h-12 flex justify-center items-center rounded-full bg-white/10 hover:bg-cyan-400 hover:text-black duration-300 cursor-pointer"></i>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="text-2xl text-cyan-400 font-bold mb-5">
+Quick Links
+</h3>
+
+<div class="flex flex-col gap-4">
+
+<a href="#home" class="hover:text-cyan-400">Home</a>
+<a href="#events" class="hover:text-cyan-400">Events</a>
+<a href="#gallery" class="hover:text-cyan-400">Gallery</a>
+<a href="#register" class="hover:text-cyan-400">Register</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="text-2xl text-cyan-400 font-bold mb-5">
+Popular Events
+</h3>
+
+<div class="flex flex-col gap-4">
+
+<a href="#" class="hover:text-cyan-400">Hackathon</a>
+<a href="#" class="hover:text-cyan-400">Dance Battle</a>
+<a href="#" class="hover:text-cyan-400">Esports Championship</a>
+<a href="#" class="hover:text-cyan-400">Battle of Bands</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="text-2xl text-cyan-400 font-bold mb-5">
+Contact Info
+</h3>
+
+<div class="flex flex-col gap-4">
+
+<a href="https://maps.google.com/?q=Ahmedabad,Gujarat"
+target="_blank"
+class="hover:text-cyan-400">
+
+<i class="fa-solid fa-location-dot"></i>
+Ahmedabad, Gujarat
+
+</a>
+
+<a href="mailto:campusfest@gmail.com"
+class="hover:text-cyan-400">
+
+<i class="fa-solid fa-envelope"></i>
+campusfest@gmail.com
+
+</a>
+
+<a href="tel:+919876543210"
+class="hover:text-cyan-400">
+
+<i class="fa-solid fa-phone"></i>
++91 98765 43210
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-white/10 mt-12 pt-8 text-center text-slate-400">
+© 2026 CampusFest. All Rights Reserved.
+</div>
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+// MOBILE MENU
+
+$('.menu-btn').click(function(){
+$('.mobile-menu').slideToggle();
+});
+
+// FILTER BUTTONS
+
+$('.filter-btn').click(function(){
+
+$('.filter-btn')
+.removeClass('bg-cyan-400 text-black font-bold')
+.addClass('bg-slate-800 text-white');
+
+$(this)
+.removeClass('bg-slate-800 text-white')
+.addClass('bg-cyan-400 text-black font-bold');
+
+let value = $(this).attr('data-filter');
+
+if(value == 'all'){
+$('.card').show(300);
+}
+else{
+$('.card').hide(300);
+$('.' + value).show(300);
+}
+
+});
+
+// REGISTER FORM
+
+$('#registerForm').submit(function(e){
+
+e.preventDefault();
+
+alert('🎉 Registration Successful! Welcome to CampusFest 2026');
+
+$('#registerForm')[0].reset();
+
+});
+
+// COUNTDOWN
+
+const targetDate = new Date("March 20, 2026 10:00:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24))
+/ (1000 * 60 * 60));
+
+const minutes = Math.floor((distance % (1000 * 60 * 60))
+/ (1000 * 60));
+
+const seconds = Math.floor((distance % (1000 * 60))
+/ 1000);
+
+$('#days').text(days);
+$('#hours').text(hours);
+$('#minutes').text(minutes);
+$('#seconds').text(seconds);
+
+},1000);
+
+</script>
+
+</body>
+</html>
